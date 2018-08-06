@@ -1,10 +1,14 @@
 import React from 'react';
-// import Aux from '../../hoc/Aux';
+import styled from 'styled-components';
+
+const MainContainer = styled.main`
+  margin-top: 16px;
+`;
 
 const layout = props => (
   <React.Fragment>
     <div>Toolbar, SideDrawer, Backdrop</div>
-    <main>{props.children}</main>
+    <MainContainer>{props.children}</MainContainer>
   </React.Fragment>
 );
 
