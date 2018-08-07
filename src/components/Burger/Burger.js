@@ -1,5 +1,17 @@
 import React from 'react';
 
 import BurgerIngredients from './BurgerIngredients/BurgerIngredients';
+import { StyledBurger } from './style';
 
-export const Burger = () => <BurgerIngredients type={'bread-top'} />;
+const burger = props => {
+  return (
+    <StyledBurger>
+      <BurgerIngredients type="bread-top" />
+      <BurgerIngredients type="cheese" />
+      <BurgerIngredients type="meat" />
+      <BurgerIngredients type="bread-bottom" />
+    </StyledBurger>
+  );
+};
+
+export default burger;

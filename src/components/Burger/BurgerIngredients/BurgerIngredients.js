@@ -14,17 +14,17 @@ import {
 
 const burgerIngredient = ({ type }) => {
   const ingredient = {
-    'bread-botton': () => <BreadBottom />,
+    'bread-bottom': () => <BreadBottom />,
     'bread-top': () => (
       <BreadTop>
         <Seeds1 />
         <Seeds2 />
       </BreadTop>
     ),
-    meat: () => <Meat />,
-    cheese: () => <Cheese />,
-    salad: () => <Salad />,
-    bacon: () => <Bacon />
+    'meat': () => <Meat />,
+    'cheese': () => <Cheese />,
+    'salad': () => <Salad />,
+    'bacon': () => <Bacon />
   };
 
   return ingredient[type]();
