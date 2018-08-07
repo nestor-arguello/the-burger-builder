@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import PropTypes from 'prop-types';
 
 import {
   BreadBottom,
@@ -12,7 +12,7 @@ import {
   Bacon
 } from './style';
 
-const burgerIngredient = props => {
+const burgerIngredient = ({ type }) => {
   const ingredient = {
     'bread-botton': () => <BreadBottom />,
     'bread-top': () => (
@@ -27,7 +27,11 @@ const burgerIngredient = props => {
     bacon: () => <Bacon />
   };
 
-  return ingredient['bread-botton']();
+  return ingredient[type]();
+};
+
+burgerIngredient.propTypes = {
+  type: PropTypes.string.isRequired
 };
 
 export default burgerIngredient;
