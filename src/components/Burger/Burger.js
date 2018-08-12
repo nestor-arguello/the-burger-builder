@@ -4,11 +4,28 @@ import BurgerIngredients from './BurgerIngredients/BurgerIngredients';
 import { StyledBurger } from './style';
 
 const burger = ({ ingredients }) => {
-  const transformedIngredients = Object.keys(ingredients).map(ingKey => {
-    return [...Array(ingredients[ingKey])].map((_, index) => {
-      return <BurgerIngredients key={ingKey + index} type={ingKey} />;
-    });
-  });
+  let transformedIngredients = Object.keys(ingredients)
+    .map(ingKey => {
+      return [...Array(ingredients[ingKey])].map(
+        (_, index) => {
+          return (
+            <BurgerIngredients
+              key={ingKey + index}
+              type={ingKey}
+            />
+          );
+        }
+      );
+    })
+    .reduce((array, item) => {
+      return array.concat(item);
+    }, []);
+
+  if (transformedIngredients.length === 0) {
+    transformedIngredients = (
+      <p>Please add some ingredients</p>
+    );
+  }
 
   return (
     <StyledBurger>
