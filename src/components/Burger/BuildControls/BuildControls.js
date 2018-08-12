@@ -1,17 +1,7 @@
 import React from 'react';
-import styled from 'styled-components';
 import BuildControl from './BuildControl/BuildControl';
+import { BuildControls, OrderButton } from './styles'
 
-const BuildControls = styled.div`
-  width: 100%;
-  background-color: #cf8f2e;
-  display: flex;
-  flex-flow: column;
-  align-items: center;
-  box-shadow: 0 2px 1px #ccc;
-  margin: auto;
-  padding: 10px 0;
-`;
 
 const controls = [
   { label: 'Salad', type: 'salad' },
@@ -24,7 +14,8 @@ const buildControls = ({
   ingredientAdded,
   ingredientRemoved,
   disabled,
-  price
+  price,
+  purchasable
 }) => {
   return <BuildControls>
       <p>
@@ -39,6 +30,7 @@ const buildControls = ({
           disabled={disabled[ctrl.type]}
         />
       ))}
+      <OrderButton disabled={!purchasable}>ORDER NOW</OrderButton>
     </BuildControls>;
 };
 
