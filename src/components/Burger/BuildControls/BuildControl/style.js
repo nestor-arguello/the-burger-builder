@@ -37,7 +37,7 @@ export const Label = styled.div`
   width: 80px;
 `;
 
-export const Less = styled.div`
+export const Less = styled.button`
   background-color: #d39952;
   color: white;
 
@@ -48,7 +48,7 @@ export const Less = styled.div`
   }
 `;
 
-export const More = styled.div`
+export const More = styled.button`
   background-color: #8f5e1e;
   color: white;
 
