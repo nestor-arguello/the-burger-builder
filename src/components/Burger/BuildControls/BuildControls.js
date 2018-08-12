@@ -23,10 +23,13 @@ const controls = [
 const buildControls = ({
   ingredientAdded,
   ingredientRemoved,
-  disabled
+  disabled,
+  price
 }) => {
-  return (
-    <BuildControls>
+  return <BuildControls>
+      <p>
+        Current Price: <strong>{price.toFixed(2)}</strong>
+      </p>
       {controls.map(ctrl => (
         <BuildControl
           key={ctrl.label}
@@ -36,8 +39,7 @@ const buildControls = ({
           disabled={disabled[ctrl.type]}
         />
       ))}
-    </BuildControls>
-  );
+    </BuildControls>;
 };
 
 export default buildControls;
