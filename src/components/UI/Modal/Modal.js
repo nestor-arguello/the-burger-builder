@@ -1,4 +1,5 @@
 import React from 'react';
+import Backdrop from '../Backdrop/Backdrop';
 import styled, { css } from 'styled-components';
 
 const StyledModal = styled.div`
@@ -15,14 +16,13 @@ const StyledModal = styled.div`
   transform: translateY(-100vh);
   opacity: 0;
   transition: all 0.3s ease-out;
-  
 
-  ${props => props.show && css` 
-    transform: translateY(0);
-    opacity: 1;
-  `}
-
-  @media (min-width: 600px) {
+  ${props =>
+    props.show &&
+    css`
+      transform: translateY(0);
+      opacity: 1;
+    `} @media (min-width: 600px) {
     & {
       width: 500px;
       left: calc(50% - 250px);
@@ -30,8 +30,18 @@ const StyledModal = styled.div`
   }
 `;
 
-const modal = ({ children, show, ...props }) => {
-  return <StyledModal show={show}>{children}</StyledModal>;
+const modal = ({
+  children,
+  show,
+  modalClosed,
+  ...props
+}) => {
+  return (
+    <React.Fragment>
+      <StyledModal show={show}>{children}</StyledModal>
+      <Backdrop show={show} clicked={modalClosed} />
+    </React.Fragment>
+  );
 };
 
 export default modal;
