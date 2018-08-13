@@ -1,7 +1,6 @@
 import React from 'react';
 import BuildControl from './BuildControl/BuildControl';
-import { BuildControls, OrderButton } from './styles'
-
+import { BuildControls, OrderButton } from './styles';
 
 const controls = [
   { label: 'Salad', type: 'salad' },
@@ -15,9 +14,11 @@ const buildControls = ({
   ingredientRemoved,
   disabled,
   price,
-  purchasable
+  purchasable,
+  ordered
 }) => {
-  return <BuildControls>
+  return (
+    <BuildControls>
       <p>
         Current Price: <strong>{price.toFixed(2)}</strong>
       </p>
@@ -30,8 +31,14 @@ const buildControls = ({
           disabled={disabled[ctrl.type]}
         />
       ))}
-      <OrderButton disabled={!purchasable}>ORDER NOW</OrderButton>
-    </BuildControls>;
+      <OrderButton
+        disabled={!purchasable}
+        onClick={ordered}
+      >
+        ORDER NOW
+      </OrderButton>
+    </BuildControls>
+  );
 };
 
 export default buildControls;

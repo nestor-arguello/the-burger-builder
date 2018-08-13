@@ -1,5 +1,5 @@
 import React from 'react';
-import styled from 'styled-components';
+import styled, { css } from 'styled-components';
 
 const StyledModal = styled.div`
   position: fixed;
@@ -12,7 +12,15 @@ const StyledModal = styled.div`
   left: 15%;
   top: 30%;
   box-sizing: border-box;
+  transform: translateY(-100vh);
+  opacity: 0;
   transition: all 0.3s ease-out;
+  
+
+  ${props => props.show && css` 
+    transform: translateY(0);
+    opacity: 1;
+  `}
 
   @media (min-width: 600px) {
     & {
@@ -22,8 +30,8 @@ const StyledModal = styled.div`
   }
 `;
 
-const modal = ({ children, ...props }) => {
-  return <StyledModal>{children}</StyledModal>;
+const modal = ({ children, show, ...props }) => {
+  return <StyledModal show={show}>{children}</StyledModal>;
 };
 
 export default modal;
