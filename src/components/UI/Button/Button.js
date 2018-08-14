@@ -18,13 +18,13 @@ const StyledButton = styled.button`
   }
 
   ${props =>
-    props.btnType === 'Succes' &&
+    props.Succes &&
     css`
       color: #5c9210;
     `}
 
   ${props =>
-    props.btnType === 'Danger' &&
+    props.Danger &&
     css`
       color: #944317;
     `}
@@ -32,8 +32,8 @@ const StyledButton = styled.button`
   }};
 `;
 
-const button = ({ clicked, children, btnType }) => (
-  <StyledButton onClick={clicked} btnType={btnType}>
+const button = ({ clicked, children, ...props }) => (
+  <StyledButton onClick={clicked} {...props} >
     {children}
   </StyledButton>
 );
