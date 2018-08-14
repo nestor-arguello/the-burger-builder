@@ -4,7 +4,8 @@ import Button from '../../UI/Button/Button';
 const ordenSummary = ({
   ingredients,
   purchaseCancelled,
-  purchaseContinued
+  purchaseContinued,
+  price
 }) => {
   const ingerdientsSummary = Object.keys(ingredients).map(
     ingKey => {
@@ -26,6 +27,7 @@ const ordenSummary = ({
         A delicious burger with the following ingredients:
       </p>
       <ul>{ingerdientsSummary}</ul>
+      <p><strong>Total Price: {price.toFixed(2)}</strong></p>
       <p>Continue to Checkout?</p>
       <Button clicked={purchaseCancelled} Danger>
         CANCEL
