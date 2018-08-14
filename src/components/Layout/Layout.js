@@ -1,13 +1,14 @@
 import React from 'react';
 import styled from 'styled-components';
+import Toolbar from '../Navigation/Toolbar/Toolbar'
 
 const MainContainer = styled.main`
-  margin-top: 16px;
+  margin-top: 72px;
 `;
 
 const layout = props => (
   <React.Fragment>
-    <div>Toolbar, SideDrawer, Backdrop</div>
+    <Toolbar />
     <MainContainer>{props.children}</MainContainer>
   </React.Fragment>
 );
