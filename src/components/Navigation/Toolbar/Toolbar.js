@@ -1,5 +1,6 @@
 import React from 'react';
 import styled from 'styled-components'
+import Logo from '../../Logo/Logo'
 
 const StyledToolbar = styled.header`
   height: 56px;
@@ -23,7 +24,7 @@ const StyledToolbar = styled.header`
 const toolbar = ({ ...props }) => (
   <StyledToolbar {...props}>
     <div>MENU</div>
-    <div>LOGO</div>
+    <Logo />
     <nav>...</nav>
   </StyledToolbar>
 );
