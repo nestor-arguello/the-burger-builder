@@ -26,7 +26,7 @@ const ordenSummary = ({
       <p>
         A delicious burger with the following ingredients:
       </p>
-      <ul>{ingerdientsSummary}</ul>
+      <ul style={{padding: '20px'}}>{ingerdientsSummary}</ul>
       <p><strong>Total Price: {price.toFixed(2)}</strong></p>
       <p>Continue to Checkout?</p>
       <Button clicked={purchaseCancelled} Danger>

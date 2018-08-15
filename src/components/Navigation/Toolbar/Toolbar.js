@@ -1,6 +1,7 @@
 import React from 'react';
-import styled from 'styled-components'
-import Logo from '../../Logo/Logo'
+import styled from 'styled-components';
+import Logo from '../../Logo/Logo';
+import NavigationItems from '../NavigationItems/NavigationItems';
 
 const StyledToolbar = styled.header`
   height: 56px;
@@ -8,7 +9,7 @@ const StyledToolbar = styled.header`
   position: fixed;
   top: 0;
   left: 0;
-  background-color: #703B09;
+  background-color: #703b09;
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -17,15 +18,14 @@ const StyledToolbar = styled.header`
 
   & nav {
     height: 100%;
-
   }
-`
+`;
 
 const toolbar = ({ ...props }) => (
   <StyledToolbar {...props}>
     <div>MENU</div>
     <Logo />
-    <nav>...</nav>
+    <NavigationItems />
   </StyledToolbar>
 );
 
