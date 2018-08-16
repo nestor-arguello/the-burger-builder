@@ -19,12 +19,18 @@ const StyledToolbar = styled.header`
   & nav {
     height: 100%;
   }
+
+  & .Logo {
+    height: 80%;
+  }
 `;
 
 const toolbar = ({ ...props }) => (
   <StyledToolbar {...props}>
     <div>MENU</div>
-    <Logo />
+    <div className="Logo">
+      <Logo />
+    </div>
     <NavigationItems />
   </StyledToolbar>
 );

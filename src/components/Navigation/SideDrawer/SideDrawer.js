@@ -21,6 +21,10 @@ const StyledSideDrawer = styled.div`
     }
   }
 
+  & .Logo {
+    height: 11%;
+  }
+
   ${props =>
     props.Open &&
     css`
@@ -35,7 +39,10 @@ const StyledSideDrawer = styled.div`
 const sideDrawer = ({ ...props }) => {
   return (
     <StyledSideDrawer>
-      <Logo />
+      <div className="Logo">
+        <Logo />
+
+      </div>
       <nav>
         <NavigationItems />
       </nav>
