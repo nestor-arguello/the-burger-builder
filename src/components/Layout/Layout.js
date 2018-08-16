@@ -4,7 +4,7 @@ import Toolbar from '../Navigation/Toolbar/Toolbar'
 import SideDrawer from '../Navigation/SideDrawer/SideDrawer'
 
 const MainContainer = styled.main`
-  margin-top: 72px;
+  padding-top: 72px;
 `;
 
 const layout = props => (

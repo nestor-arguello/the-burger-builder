@@ -23,6 +23,7 @@ const StyledSideDrawer = styled.div`
 
   & .Logo {
     height: 11%;
+    margin-bottom: 32px;
   }
 
   ${props =>

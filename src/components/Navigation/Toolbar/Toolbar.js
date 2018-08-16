@@ -23,6 +23,12 @@ const StyledToolbar = styled.header`
   & .Logo {
     height: 80%;
   }
+
+  @media (max-width: 499px) {
+    & .DesktopOnly {
+      display: none;
+    }
+  }
 `;
 
 const toolbar = ({ ...props }) => (
@@ -31,7 +37,9 @@ const toolbar = ({ ...props }) => (
     <div className="Logo">
       <Logo />
     </div>
-    <NavigationItems />
+    <nav className="DesktopOnly">
+      <NavigationItems />
+    </nav>
   </StyledToolbar>
 );
 
