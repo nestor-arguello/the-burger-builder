@@ -9,6 +9,12 @@ const StyledBackdrop = styled.div`
   left: 0;
   top: 0;
   background-color: rgba(0, 0, 0, 0.5);
+
+  /* @media (min-width: 500px) {
+    & {
+      display: none;
+    }
+  } */
 `;
 
 const backdrop = ({ show, clicked }) =>

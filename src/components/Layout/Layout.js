@@ -9,7 +9,7 @@ const MainContainer = styled.main`
 
 class Layout extends Component {
   state = {
-    showSideDrawer: true
+    showSideDrawer: false
   };
 
   handleCloseSideDrawer = () => {
@@ -17,11 +17,19 @@ class Layout extends Component {
       showSideDrawer: false
     });
   };
+  
+  handleSideDrawerToggle = () => {
+    this.setState((prevState) => {
+      return { showSideDrawer: prevState };
+    });
+  };
 
   render() {
     return (
       <React.Fragment>
-        <Toolbar />
+        <Toolbar
+          drawerToggleClicked={this.handleSideDrawerToggle}
+        />
         <SideDrawer
           open={this.state.showSideDrawer}
           closed={this.handleCloseSideDrawer}

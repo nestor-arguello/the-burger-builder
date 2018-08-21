@@ -16,11 +16,11 @@ const StyledSideDrawer = styled.div`
   padding: 32px 16px;
   transition: transform 0.3s ease-out;
 
-  @media (min-width: 500px) {
+  /* @media (min-width: 500px) {
     & {
       display: none;
     }
-  }
+  } */
 
   & .Logo {
     height: 11%;
