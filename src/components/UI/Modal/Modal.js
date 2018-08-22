@@ -1,4 +1,4 @@
-import React from 'react';
+import React, { Component } from 'react';
 import Backdrop from '../Backdrop/Backdrop';
 import styled, { css } from 'styled-components';
 
@@ -30,18 +30,25 @@ const StyledModal = styled.div`
   }
 `;
 
-const modal = ({
-  children,
-  show,
-  modalClosed,
-  ...props
-}) => {
-  return (
-    <React.Fragment>
-      <StyledModal show={show}>{children}</StyledModal>
-      <Backdrop show={show} clicked={modalClosed} />
-    </React.Fragment>
-  );
-};
+class Modal extends Component {
+  shouldComponentUpdate (nextProps, nextState) {
+    return nextProps.show !== this.props.show
+  }
+  
+  componentWillUpdate(nextProps, nextState) {
+    console.log('[Moda] WillUpdate');
+  }
 
-export default modal;
+  render() {
+    const { children, show, modalClosed } = this.props;
+
+    return (
+      <React.Fragment>
+        <StyledModal show={show}>{children}</StyledModal>
+        <Backdrop show={show} clicked={modalClosed} />
+      </React.Fragment>
+    );
+  }
+}
+
+export default Modal;
