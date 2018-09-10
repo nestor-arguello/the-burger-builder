@@ -17,6 +17,12 @@ const StyledDrawerToggle = styled.div`
     height: 3px;
     background-color: white;
   }
+
+  @media (min-width: 500px) {
+    & {
+      display: none;
+    }
+  }
 `;
 
 const drawerToggle = ({ clicked, ...props }) => (
