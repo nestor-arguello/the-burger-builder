@@ -31,10 +31,13 @@ const StyledModal = styled.div`
 `;
 
 class Modal extends Component {
-  shouldComponentUpdate (nextProps, nextState) {
-    return nextProps.show !== this.props.show
+  shouldComponentUpdate(nextProps, nextState) {
+    return (
+      nextProps.show !== this.props.show ||
+      nextProps.children !== this.props.children
+    );
   }
-  
+
   componentWillUpdate(nextProps, nextState) {
     console.log('[Moda] WillUpdate');
   }
