@@ -39,7 +39,7 @@ class Modal extends Component {
   }
 
   componentWillUpdate(nextProps, nextState) {
-    console.log('[Moda] WillUpdate');
+    console.log('[Modal] WillUpdate');
   }
 
   render() {
